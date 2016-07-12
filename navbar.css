@@ -64,7 +64,8 @@ body{
 .ground{
     width: 100%;
     height: 100%;
-    background-color: saddlebrown;
+    background: url('http://orig11.deviantart.net/3e8a/f/2015/293/c/5/flowey_large_by_sovanjedi-d9du6ic.gif') no-repeat;
+    background-size: cover;
 
     top: 0;
     z-index: -4;
