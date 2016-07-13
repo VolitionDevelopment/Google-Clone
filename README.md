@@ -6,5 +6,7 @@ What started out as a Google clone turned into something else...
 - LSD Simulator
 - Google!
 - Procedurally generated skyline
+- Flowey!
+- Google searchbar works
 
-![alt text](http://i.imgur.com/2kjn5TB.png "Preview")
+![alt text](http://i.imgur.com/mza8weX.png "Preview")
