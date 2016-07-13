@@ -4,82 +4,57 @@
     <meta charset="UTF-8">
     <title>Navbar</title>
 
+    <link href="http://meyerweb.com/eric/tools/css/reset/reset.css" rel="stylesheet">
     <link href="navbar.css" rel="stylesheet">
 </head>
 <body>
 
-
-<div class="world">
-    <div class="sky"></div>
-    <div class="sun"></div>
-    <div class="road"></div>
-    <div class="ground"></div>
-    <div class="octagon"></div>
-    <div class="pole"></div>
-    <div class="stop"><b>STOP</b></div>
-
-    <div class="skyline">
-        <div class="building"></div>
-        <div class="building"></div>
-        <div class="building"></div>
-        <div class="building"></div>
-        <div class="building"></div>
-        <div class="building"></div>
-        <div class="building"></div>
-        <div class="building"></div>
-        <div class="building"></div>
-        <div class="building"></div>
-        <div class="building"></div>
-        <div class="building"></div>
-        <div class="building"></div>
-        <div class="building"></div>
-        <div class="building"></div>
-        <div class="building"></div>
-    </div>
-
-    <div class="car">
-        <div class="wheel" style="top: 80px; left: 170px;"></div>
-        <div class="wheel" style="top: 80px; left: 40px;"></div>
-        <div class="inner-wheel" style="top: 93px; left: 52px;"></div>
-        <div class="inner-wheel" style="top: 93px; left: 182px;"></div>
-        <div class="window" style="top: 20px; left: 180px;"></div>
-        <div class="body"></div>
-    </div>
-</div>
-
-
-<nav>
-    <ul class="nav">
-        <li class="item avatar">
-            <img src="assets/avatar.png">
-        </li>
-        <li class="item icons">
-            <img src="assets/notif.png">
-        </li>
-        <li class="item icons">
-            <img src="assets/icons.png">
-        </li>
-        <li class="item text">Images</li>
-        <li class="item text">Gmail</li>
+<nav class="navbar">
+    <ul class="navbar-right">
+        <li class="navbar-item navbar-text">Mail</li>
+        <li class="navbar-item navbar-text">Images</li>
+        <li class="navbar-item navbar-bell"></li>
+        <li class="navbar-item navbar-icon"></li>
+        <li class="navbar-item navbar-avatar">J</li>
     </ul>
 </nav>
 
 <div class="container">
     <div class="content">
-        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
-        <input class="input" name="query" id="query">
-        <button class="button" name="search" id="search">Google Search</button>
-        <button class="button">I'm Feeling Lucky</button>
+        <div class="logo">
+            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+        </div>
+        <div class="search">
+            <input class="input" name="query" id="query">
+            <div class="mic">
+                <img src="assets/mic.png">
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="button" name="search" id="search">Google Search</button>
+            <button class="button">I'm Feeling Lucky</button>
+        </div>
     </div>
 </div>
+
+<div class="footer">
+    <ul class="footer-left">
+        <li class="footer-item">Advertising</li>
+        <li class="footer-item">Business</li>
+        <li class="footer-item">About</li>
+    </ul>
+
+    <ul class="footer-right">
+        <li class="footer-item">Privacy</li>
+        <li class="footer-item">Terms</li>
+        <li class="footer-item">Settings</li>
+    </ul>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 <script>
     $(document).ready(function(){
-        generate();
-
-        setInterval(generate, 250);
-
         $('#search').click(function(){
             location.href = "https://www.google.com/#q=" + $('#query').val();
         });
@@ -90,31 +65,6 @@
             }
         });
     });
-
-    function getRandomArbitrary(min, max) {
-        return Math.random() * (max - min) + min;
-    }
-
-    function generate(){
-        var previousLeft = 0;
-
-        $('.building').each(function(){
-
-            var left = parseInt($(this).css('left'));
-            var height = getRandomArbitrary(70, 245);
-            var top = 285 - height;
-            var randhex = '#'+Math.floor(Math.random()*16777215).toString(16);
-
-            $(this).css('left', previousLeft + 85);
-            $(this).css('top', top);
-            $(this).css('height', height);
-            $(this).css('background-color', randhex);
-
-            previousLeft += 85;
-        });
-
-        $('.car').css('left', getRandomArbitrary(50, 1500));
-    }
 </script>
 
 </body>
