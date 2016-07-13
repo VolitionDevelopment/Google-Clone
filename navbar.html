@@ -48,12 +48,47 @@
 </div>
 
 
+<nav>
+    <ul class="nav">
+        <li class="item avatar">
+            <img src="assets/avatar.png">
+        </li>
+        <li class="item icons">
+            <img src="assets/notif.png">
+        </li>
+        <li class="item icons">
+            <img src="assets/icons.png">
+        </li>
+        <li class="item text">Images</li>
+        <li class="item text">Gmail</li>
+    </ul>
+</nav>
+
+<div class="container">
+    <div class="content">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+        <input class="input" name="query" id="query">
+        <button class="button" name="search" id="search">Google Search</button>
+        <button class="button">I'm Feeling Lucky</button>
+    </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 <script>
     $(document).ready(function(){
         generate();
 
         setInterval(generate, 250);
+
+        $('#search').click(function(){
+            location.href = "https://www.google.com/#q=" + $('#query').val();
+        });
+
+        $('#query').keypress(function(e){
+            if(e.which == 13){
+                location.href = "https://www.google.com/#q=" + $('#query').val();
+            }
+        });
     });
 
     function getRandomArbitrary(min, max) {
@@ -81,31 +116,6 @@
         $('.car').css('left', getRandomArbitrary(50, 1500));
     }
 </script>
-
-<nav>
-    <ul class="nav">
-        <li class="item avatar">
-            <img src="assets/avatar.png">
-        </li>
-        <li class="item icons">
-            <img src="assets/notif.png">
-        </li>
-        <li class="item icons">
-            <img src="assets/icons.png">
-        </li>
-        <li class="item text">Images</li>
-        <li class="item text">Gmail</li>
-    </ul>
-</nav>
-
-<div class="container">
-    <div class="content">
-        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
-        <input class="input">
-        <button class="button">Google Search</button>
-        <button class="button">I'm Feeling Lucky</button>
-    </div>
-</div>
 
 </body>
 </html>
